@@ -32,28 +32,34 @@ public class MainActivity extends AppCompatActivity {
         botao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                alt = Float.parseFloat(altura.getText().toString());
-                massa = Float.parseFloat(peso.getText().toString());
-
-                imc = massa / alt*alt;
-
                 RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
                 masculino = R.id.radioMasculino == radioGroup.getCheckedRadioButtonId();
                 feminino = R.id.radioFeminino == radioGroup.getCheckedRadioButtonId();
 
-                Intent tela2 = new Intent(MainActivity.this, Resultado.class);
+                if( (masculino && !feminino) || (!masculino && feminino) ){
 
-                Bundle resultado = new Bundle();
-                resultado.putFloat("imc", imc);
+                    alt = Float.parseFloat(altura.getText().toString());
+                    massa = Float.parseFloat(peso.getText().toString());
 
-                if (masculino){
-                    resultado.putString("sexo", "masculino");
+                    imc = massa / alt*alt;
+
+                    Intent tela2 = new Intent(MainActivity.this, Resultado.class);
+
+                    Bundle resultado = new Bundle();
+                    resultado.putFloat("imc", imc);
+
+                    if (masculino){
+                        resultado.putString("sexo", "masculino");
+                    } else{
+                        resultado.putString("sexo", "feminino");
+                    }
+
+                    tela2.putExtras(resultado);
+                    startActivity(tela2);
+
                 } else{
-                    resultado.putString("sexo", "feminino");
+                    //alerta para escolher o sexo
                 }
-
-                startActivity(tela2);
             }
         });
     }
