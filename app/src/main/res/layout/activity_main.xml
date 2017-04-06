@@ -23,13 +23,11 @@
             android:text="Índice da Massa Corpóreo!"
             android:id="@+id/textView1"/>
 
-        <EditText
+        <TextView
+            android:text="Altura: "
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            android:id="@+id/altura"
-            android:text="altura"
+            android:id="@+id/textViewAltura"
             android:layout_below="@+id/textView1"/>
 
         <EditText
@@ -37,8 +35,23 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
+            android:id="@+id/altura"
+            android:layout_toRightOf="@+id/textViewAltura"/>
+
+        <TextView
+            android:text="Peso: "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewPeso"
+            android:layout_below="@+id/textViewAltura"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
             android:id="@+id/peso"
-            android:text="peso"
+            android:layout_toRightOf="@+id/textViewPeso"
             android:layout_below="@+id/altura"/>
 
         <RadioGroup

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     alt = Float.parseFloat(altura.getText().toString());
                     massa = Float.parseFloat(peso.getText().toString());
 
-                    imc = massa / alt*alt;
+                    imc = massa / (alt*alt);
 
                     Intent tela2 = new Intent(MainActivity.this, Resultado.class);
 
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else{
                     //alerta para escolher o sexo
+                    Toast.makeText(MainActivity.this, "É necessario escolher o sexo", Toast.LENGTH_LONG).show();
                 }
             }
         });
