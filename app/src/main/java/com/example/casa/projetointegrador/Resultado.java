@@ -3,7 +3,6 @@ package com.example.casa.projetointegrador;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,7 +13,6 @@ import android.widget.TextView;
 public class Resultado extends Activity {
 
     private int[] imagens = new int[]{R.drawable.imc_masculino, R.drawable.imc_feminino};
-    private String[] sexos = new String[]{"masculino", "feminino"};
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,15 +25,14 @@ public class Resultado extends Activity {
 
             if(informacoes != null){
                 Float imc = informacoes.getFloat("imc");
-                String sexo = informacoes.getString("sexo");
+                int sexo = informacoes.getInt("sexo");
 
                 TextView tela2 = (TextView) findViewById(R.id.calculo);
                 tela2.setText(imc.toString());
 
 
                 final ImageView imgTabela = (ImageView) findViewById(R.id.tabela);
-
-                ArrayAdapter adaptador = new ArrayAdapter(this, android.R.layout.simple_spinner_item, sexos);
+                imgTabela.setImageResource(imagens[sexo]);
             }
         }
     }
