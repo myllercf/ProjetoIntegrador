@@ -3,12 +3,12 @@ package com.example.casa.projetointegrador;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     EditText altura;
     EditText peso;
 
-    private String[] sexos = new String[]{"masculino", "feminino"};
+    private String[] sexos = new String[]{"selecione o sexo", "Masculino", "Feminino"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +54,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                alt = Float.parseFloat(altura.getText().toString());
-                massa = Float.parseFloat(peso.getText().toString());
-
-                if( alt >= 0 && massa >= 0 ){
+                if( validaFormulario(altura, peso, tipoSexo) ){
+                    
+                    alt = Float.parseFloat(altura.getText().toString());
+                    massa = Float.parseFloat(peso.getText().toString());
 
                     imc = massa / (alt*alt);
 
@@ -72,9 +72,27 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(tela2);
 
                 } else{
-                    Toast.makeText(MainActivity.this, "É necessario escolher o sexo", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "É necessario preencher o formulário", Toast.LENGTH_LONG).show();
                 }
             }
         });
+    }
+
+    public boolean validaFormulario(EditText alt, EditText peso, int sexo){
+        boolean validado = true;
+
+        if ( TextUtils.isEmpty(alt.getText().toString()) ){
+            validado = false;
+            alt.setError("preencher altura");
+        }
+        else if ( TextUtils.isEmpty(peso.getText().toString()) ){
+            validado = false;
+            peso.setError("preencher preencher");
+        }
+        else if ( sexo <= 0 ){
+            validado = false;
+        }
+
+        return validado;
     }
 }

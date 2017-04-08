@@ -60,35 +60,12 @@
             android:id="@+id/spinner"
             android:layout_below="@+id/peso"/>
 
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/radioGroup"
-            android:layout_below="@+id/spinner">
-
-            <RadioButton
-                android:text="Masculino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioMasculino"
-                android:layout_weight="1"
-                android:layout_below="@+id/radioMasculino"/>
-
-            <RadioButton
-                android:text="Feminino"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/radioFeminino"
-                android:layout_weight="1"
-                android:layout_below="@+id/peso"/>
-        </RadioGroup>
-
         <Button
             android:text="Calcular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button"
-            android:layout_below="@+id/radioGroup"/>
+            android:layout_below="@+id/spinner"/>
 
     </RelativeLayout>
 </RelativeLayout>
