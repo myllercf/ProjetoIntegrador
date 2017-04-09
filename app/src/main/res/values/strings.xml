@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ProjetoIntegrador</string>
+
+    <!-- Campos tela 1-->
+    <string name="cabecalho">Índice da Massa Corpóreo!</string>
+    <string name="campo_altura">altura: </string>
+    <string name="campo_peso">peso: </string>
+    <string name="campo_sexo">selecione o sexo</string>
+    <string name="botao">Calcular</string>
+
+    <!-- Campos tela 2-->
+    <string name="resultado">O seu IMC é: </string>
 </resources>

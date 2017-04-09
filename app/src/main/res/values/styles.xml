@@ -7,5 +7,24 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    
+    <style name="textoTitulo">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/corPreta</item>
+        <item name="android:textSize">20dp</item>
+        <!--<item name="android:layout_margin=">15dp</item>-->
+    </style>
+
+    <style name="altura">
+        <item name="android:textColor">@color/esverdeado</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="peso">
+        <item name="android:textColor">@color/alaranjado</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

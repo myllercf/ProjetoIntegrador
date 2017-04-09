@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="O seu IMC é: "
+        android:text="@string/resultado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
@@ -13,8 +13,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/textoTitulo"
         android:id="@+id/calculo"
-        android:layout_toRightOf="@+id/textView" />
+        android:layout_below="@+id/textView" />
 
     <ImageView
         android:layout_width="match_parent"

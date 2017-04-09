@@ -20,11 +20,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Índice da Massa Corpóreo!"
+            android:text="@string/cabecalho"
+            style="@style/textoTitulo"
             android:id="@+id/textView1"/>
 
         <TextView
-            android:text="Altura: "
+            android:text="@string/campo_altura"
+            style="@style/altura"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewAltura"
@@ -33,13 +35,15 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/altura"
             android:layout_toRightOf="@+id/textViewAltura"/>
 
         <TextView
-            android:text="Peso: "
+            android:text="@string/campo_peso"
+            style="@style/peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewPeso"
@@ -61,7 +65,7 @@
             android:layout_below="@+id/peso"/>
 
         <Button
-            android:text="Calcular"
+            android:text="@string/botao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button"
