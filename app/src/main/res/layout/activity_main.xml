@@ -8,6 +8,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/peso_ideal"
+    android:layout_gravity="center"
     tools:context="com.example.casa.projetointegrador.MainActivity">
 
     <RelativeLayout
@@ -39,7 +41,7 @@
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/altura"
-            android:layout_toRightOf="@+id/textViewAltura"/>
+            android:layout_below="@+id/textViewAltura"/>
 
         <TextView
             android:text="@string/campo_peso"
@@ -47,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textViewPeso"
-            android:layout_below="@+id/textViewAltura"/>
+            android:layout_below="@+id/altura"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -55,12 +57,12 @@
             android:inputType="numberDecimal"
             android:ems="10"
             android:id="@+id/peso"
-            android:layout_toRightOf="@+id/textViewPeso"
-            android:layout_below="@+id/altura"/>
+            android:layout_below="@+id/textViewPeso"/>
 
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/sexo"
             android:id="@+id/spinner"
             android:layout_below="@+id/peso"/>
 
